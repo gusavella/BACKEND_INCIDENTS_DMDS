@@ -20,9 +20,7 @@ let storage = multer.diskStorage({
 
 router.get('/all',userController.all)   
 
-router.get('/detail/:id',authMiddleware,userController.detail)
-//Login
-router.get('/login',guestMiddleware,userController.login)
+router.get('/detail/:id',userController.detail)
 
 router.post('/login',validateLoginMiddleware,userController.loginProcess)
 

@@ -4,8 +4,8 @@ const { validationResult } = require('express-validator')
 const controller = {
     all: async (req, res) => {
         try{
-            let roles=await db.Role.findAll()
-            res.json( roles)
+            let locals=await db.Local.findAll()//{include:["city_local"]}
+            res.json( locals)
         }catch(e){
             console.log(e)
         }

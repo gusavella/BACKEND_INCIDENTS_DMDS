@@ -10,9 +10,14 @@ let indexRouter = require('./src/routes/index');
 //let productRouter = require('./src/routes/productRouter');
 let userRouter = require('./src/routes/userRouter');
 let roleRouter = require('./src/routes/roleRouter');
+
+let departmentRouter = require('./src/routes/departmentRouter');
+let cityRouter = require('./src/routes/cityRouter');
+
+let userLocalsRouter= require('./src/routes/userLocalRouter');
+
+let LocalRouter = require('./src/routes/LocalRouter');
 /*
-let consoleRouter = require('./src/routes/consoleRouter');
-let sectionRouter = require('./src/routes/sectionRouter');
 let categoryRouter = require('./src/routes/categoryRouter');
 let gameRouter = require('./src/routes/gameRouter');
 let productConsoleRouter = require('./src/routes/productConsoleRouter');
@@ -44,7 +49,10 @@ app.use('/', indexRouter);
 
 app.use('/users', userRouter);
 app.use('/roles', roleRouter);
-
+app.use('/departments', departmentRouter);
+app.use('/cities', cityRouter);
+app.use('/locals', LocalRouter);
+app.use('/userlocals', userLocalsRouter);
 // api
 
 app.use('/api/users', apiUsersRouter)

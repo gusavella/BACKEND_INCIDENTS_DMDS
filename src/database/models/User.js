@@ -51,11 +51,12 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_role"
         })
 
-      /*  User.hasMany(models.Order, {
-            as: "order",
-            foreignKey: "user_id"
-        })*/
-    }
+
+        User.hasMany(models.UserLocal, {
+            as: "user_local",
+            foreignKey: "id_local"
+        })
+}
  
     return User
 };

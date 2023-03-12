@@ -24,16 +24,21 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'update_time',
         deletedAt: 'delete_time'
     }
-    const Section = sequelize.define(alias, cols, config); 
+    const Local = sequelize.define(alias, cols, config); 
 
-    Section.associate = function(models) {
+    Local.associate = function(models) {
        
-         /*       Section.hasMany(models.Product, {
-                    as: "products",
-                    foreignKey: "section_id"
-                })
-                */
-    }
+        Local.belongsTo(models.City, {
+                as: "city",
+                foreignKey: "id_city"
+            })
+
  
-    return Section
+        Local.hasMany(models.UserLocal, {
+            as: "user_local",
+            foreignKey: "id_user"
+        })
+    }
+    
+    return Local
 };

@@ -5,6 +5,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware')
 const roleController =require('../controllers/roleController');
 
    router.get('/all',roleController.all)
+   router.get('/detail/:id',roleController.detail)
    router.post('/add', adminMiddleware, roleController.create)
    router.put('/:id/edit', roleController.update)
    router.delete('/:id',roleController.delete)

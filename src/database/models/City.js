@@ -1,39 +1,46 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Departament';
+    let alias = 'City';
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         name: {
             type: dataTypes.STRING(100),
             allowNull: false,
             unique: true
             
-        }
+        },
+        id_department:  {
+            type: dataTypes.BIGINT(10).UNSIGNED,
+            allowNull: false
+        },
     };
     let config = {
-        tableName:'departament',
+        tableName:'city',
         timestamps: true,
         paranoid:   true,
         createdAt: 'create_time',
         updatedAt: 'update_time',
         deletedAt: 'delete_time'
     }
-    const Role = sequelize.define(alias, cols, config); 
+    const City = sequelize.define(alias, cols, config); 
 
-     Role.associate = function (models) {
+     City.associate = function (models) {
 
-/*
-        Role.hasMany(models.User, {
-            as: "user",
-            foreignKey: "id_role"
+
+        City.belongsTo(models.Department, {
+            as: "department",
+            foreignKey: "id_department"
         })
-*/
+        
+        City.hasMany(models.Local, {
+            as: "locals",
+            foreignKey: "id_city"
+        })
+
     }
  
-    return Role
+    return City
 };
