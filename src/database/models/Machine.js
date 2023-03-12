@@ -36,10 +36,10 @@ module.exports = (sequelize, dataTypes) => {
      Machine.associate = function (models) {
 
 
-        // Machine.belongsTo(models.Department, {
-        //     as: "department",
-        //     foreignKey: "id_department"
-        // })
+        Machine.belongsTo(models.Model, {
+            as: "model",
+            foreignKey: "id_model"
+        })
         
         // Machine.hasMany(models.LocalMachine, {
         //     as: "local_machine",

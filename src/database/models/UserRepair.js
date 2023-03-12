@@ -1,13 +1,18 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'UserLocal';
+    let alias = 'UserRepair';
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
-        },    
-     
-        id_local: {
+        },
+        observation: {
+            type: dataTypes.STRING(100),
+            allowNull: false,
+            unique: true
+            
+        },
+        id_repair: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
         },
@@ -18,30 +23,30 @@ module.exports = (sequelize, dataTypes) => {
        
     };
     let config = {
-        tableName:'user_local',
+        tableName:'user_repair',
         timestamps: true,
         paranoid:   true,
         createdAt: 'create_time',
         updatedAt: 'update_time',
         deletedAt: 'delete_time'
     }
-    const UserLocal = sequelize.define(alias, cols, config); 
+    const UserRepair = sequelize.define(alias, cols, config); 
 
-    UserLocal.associate = function (models) {
+    UserRepair.associate = function (models) {
 
 
-            UserLocal.belongsTo(models.User, {
+            UserRepair.belongsTo(models.User, {
                 as: "user",
                 foreignKey: "id_user"
             })
 
-            UserLocal.belongsTo(models.Local, {
-                as: "local",
-                foreignKey: "id_local"
+            UserRepair.belongsTo(models.Repair, {
+                as: "repair",
+                foreignKey: "id_repair"
             })
        
 
    }
  
-    return UserLocal
+    return UserRepair
 };

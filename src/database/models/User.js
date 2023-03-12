@@ -54,7 +54,11 @@ module.exports = (sequelize, dataTypes) => {
 
         User.hasMany(models.UserLocal, {
             as: "user_local",
-            foreignKey: "id_local"
+            foreignKey: "id_user"
+        })
+        User.hasMany(models.UserRepair, {
+            as: "user_repair",
+            foreignKey: "id_user"
         })
 }
  

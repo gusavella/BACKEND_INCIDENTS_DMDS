@@ -20,10 +20,16 @@ let LocalRouter = require('./src/routes/LocalRouter');
 
 let markRouter = require('./src/routes/markRouter');
 
-let modelRouter = require('./src/routes/modelRouter'); /*
-let productConsoleRouter = require('./src/routes/productConsoleRouter');
-let orderRouter = require('./src/routes/orderRouter');
-*/
+let modelRouter = require('./src/routes/modelRouter'); 
+let machineRouter = require('./src/routes/machineRouter');
+let repairCategoryRouter = require('./src/routes/repairCategoryRouter');
+let repairStateRouter = require('./src/routes/repairStateRouter');
+let repairRouter = require('./src/routes/repairRouter');
+
+let sparePartRouter = require('./src/routes/sparePartRouter');
+let repairSparePartRouter = require('./src/routes/repairSparePartRouter');
+let userRepairRouter = require('./src/routes/userRepairRouter');
+//API
 const apiUsersRouter = require('./src/routes/apiUsersRouter');
 const apiProductsRouter = require('./src/routes/apiProductsRouter');
 
@@ -56,6 +62,14 @@ app.use('/locals', LocalRouter);
 app.use('/userlocals', userLocalsRouter);
 app.use('/marks', markRouter);
 app.use('/models', modelRouter);
+app.use('/machines', machineRouter);
+app.use('/repairCategories', repairCategoryRouter);
+app.use('/repairStates', repairStateRouter);
+app.use('/repairs', repairRouter);
+app.use('/userrepairs', userRepairRouter);
+
+app.use('/spareparts', sparePartRouter);
+app.use('/repairspareparts', repairSparePartRouter);
 // api
 
 app.use('/api/users', apiUsersRouter)
