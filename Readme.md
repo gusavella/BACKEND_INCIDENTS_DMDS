@@ -1,10 +1,10 @@
-# ***GamesHub***
+# ***REPORTE DE INCIDENCIAS TECNICAS***
 
-## Sitio web para compra de videojuegos y consolas de juego
+## Sistema de reporte de incidenciuas tecnicas para una empresa del sector del entretenimiento
 
 ### Audiencia objetivo:
 
-Personas con el objetivo de crear un sistema de reporte de incidencias
+Personas o empresas con el objetivo de crear un sistema de reporte de incidencias
 
 ### Integrantes del grupo: 
 
