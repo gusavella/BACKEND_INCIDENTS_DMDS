@@ -38,6 +38,11 @@ module.exports = (sequelize, dataTypes) => {
             as: "user_local",
             foreignKey: "id_user"
         })
+
+        // Local.hasMany(models.LocalMachine, {
+        //     as: "local_machine",
+        //     foreignKey: "id_local"
+        // })
     }
     
     return Local

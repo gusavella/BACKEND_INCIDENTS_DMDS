@@ -17,9 +17,10 @@ let cityRouter = require('./src/routes/cityRouter');
 let userLocalsRouter= require('./src/routes/userLocalRouter');
 
 let LocalRouter = require('./src/routes/LocalRouter');
-/*
-let categoryRouter = require('./src/routes/categoryRouter');
-let gameRouter = require('./src/routes/gameRouter');
+
+let markRouter = require('./src/routes/markRouter');
+
+let modelRouter = require('./src/routes/modelRouter'); /*
 let productConsoleRouter = require('./src/routes/productConsoleRouter');
 let orderRouter = require('./src/routes/orderRouter');
 */
@@ -53,6 +54,8 @@ app.use('/departments', departmentRouter);
 app.use('/cities', cityRouter);
 app.use('/locals', LocalRouter);
 app.use('/userlocals', userLocalsRouter);
+app.use('/marks', markRouter);
+app.use('/models', modelRouter);
 // api
 
 app.use('/api/users', apiUsersRouter)

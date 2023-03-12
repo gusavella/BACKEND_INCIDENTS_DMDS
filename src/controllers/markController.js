@@ -12,8 +12,8 @@ const sequelize = db.sequelize;
 const controller = {
     all: async (req, res) => {
       try{
-        let userLocals= await db.UserLocal.findAll({include:["user","local"]})//
-        res.json(userLocals);
+        let marks= await db.Mark.findAll()
+        res.json(marks);
       }
       catch(e){
         console.log(e)
@@ -23,8 +23,8 @@ const controller = {
     detail: async (req, res) => {
          
           try{
-            let user= await db.UserLocal.findByPk(req.params.id,{include:["user","local"]})
-            res.json(user);
+            let mark= await db.Mark.findByPk(req.params.id)
+            res.json(mark);
           }
           catch(e){
             console.log(e)
