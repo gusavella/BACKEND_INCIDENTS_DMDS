@@ -5,7 +5,7 @@ const controller = {
     all: async (req, res) => {
         try{
             let roles=await db.Role.findAll()
-            res.render('role/role.ejs',{tittle:'Roles', roles})
+            res.json( roles)
         }catch(e){
             console.log(e)
         }

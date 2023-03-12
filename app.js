@@ -7,23 +7,23 @@ let logger = require('morgan');
 const expressSession = require("express-session");
 
 let indexRouter = require('./src/routes/index');
-let productRouter = require('./src/routes/productRouter');
+//let productRouter = require('./src/routes/productRouter');
 let userRouter = require('./src/routes/userRouter');
 let roleRouter = require('./src/routes/roleRouter');
+/*
 let consoleRouter = require('./src/routes/consoleRouter');
 let sectionRouter = require('./src/routes/sectionRouter');
 let categoryRouter = require('./src/routes/categoryRouter');
 let gameRouter = require('./src/routes/gameRouter');
 let productConsoleRouter = require('./src/routes/productConsoleRouter');
 let orderRouter = require('./src/routes/orderRouter');
+*/
 const apiUsersRouter = require('./src/routes/apiUsersRouter');
 const apiProductsRouter = require('./src/routes/apiProductsRouter');
 
 
 
-
-
-let userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
+//let userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
 
 let app = express();
 
@@ -38,18 +38,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public')));
 app.use(methodOverride('_method')); 
 app.use(expressSession({secret: "secret",resave: false,saveUninitialized: false}));
-app.use(userLoggedMiddleware);
+//app.use(userLoggedMiddleware);
 
 app.use('/', indexRouter);
-app.use('/products', productRouter);
+
 app.use('/users', userRouter);
 app.use('/roles', roleRouter);
-app.use('/consoles', consoleRouter);
-app.use('/sections', sectionRouter);
-app.use('/categories', categoryRouter);
-app.use('/games', gameRouter);
-app.use('/productConsoles', productConsoleRouter);
-app.use('/orders', orderRouter);
 
 // api
 
@@ -59,7 +53,7 @@ app.use('/api/products', apiProductsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  res.status(404).render('not-found')
+  res.status(404).json('not-found')
 });
 
 // error handler
@@ -70,7 +64,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json('error');
 });
 
 module.exports = app;

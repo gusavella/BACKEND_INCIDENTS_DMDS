@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `DMDS`.`Role` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) );
 
-
+/*
 -- -----------------------------------------------------
 -- Table `DMDS`.`User`
 -- -----------------------------------------------------
@@ -109,10 +109,61 @@ CREATE TABLE IF NOT EXISTS `DMDS`.`User` (
     REFERENCES `DMDS`.`Role` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+*/
+/*********************************************************************************************/
+
+-- -----------------------------------------------------
+-- Table `DMDS`.`User`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DMDS`.`User` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `names` VARCHAR(100) NOT NULL,
+  `surnames` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(50) NOT NULL,
+  `phone` VARCHAR(50) NULL,
+  `id_role` INT NOT NULL,
+  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` TIMESTAMP NULL,
+  `delete_time` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`names` ASC) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
+  INDEX `id_role_idx` (`id_role` ASC) ,
+  CONSTRAINT `id_role`
+    FOREIGN KEY (`id_role`)
+    REFERENCES `DMDS`.`Role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+-- -----------------------------------------------------
+-- Table `DMDS`.`user_local`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DMDS`.`user_local` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_local` INT NOT NULL,
+  `id_user` INT NOT NULL,
+  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` TIMESTAMP NULL,
+  `delete_time` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `id_local1_idx` (`id_local` ASC) ,
+  INDEX `id_user_local_user_idx` (`id_user` ASC) ,
+  CONSTRAINT `id_user_local_local`
+    FOREIGN KEY (`id_local`)
+    REFERENCES `DMDS`.`Local` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_user_local_user`
+    FOREIGN KEY (`id_user`)
+    REFERENCES `DMDS`.`User` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 
 
 
+/*********************************************************************************************/
 -- -----------------------------------------------------
 -- Table `DMDS`.`Mark`
 -- -----------------------------------------------------

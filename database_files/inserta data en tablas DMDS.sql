@@ -115,12 +115,23 @@ INSERT INTO `dmds`.`role`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
 VALUES(6,'Administrador plataforma','2022-12-18 09:52:06',null,null);
 
 /*INSERTA USUARIO*/
-INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_local`,`id_role`,`create_time`,`update_time`,`delete_time`)
-VALUES(1,'Hector Manuel','Amado','Hectoramado@gmail.com',123456,3175555555,1,3,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_local`,`id_role`,`create_time`,`update_time`,`delete_time`)
-VALUES(2,'Promotor 1','promotor 1','diamondsogamoso@gmail.com',123456,3175555555,1,1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_local`,`id_role`,`create_time`,`update_time`,`delete_time`)
-VALUES(3,'Promotor 1','promotor 1','diamantesogamoso@gmail.com',123456,3175555555,2,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_role`,`create_time`,`update_time`,`delete_time`)
+VALUES(1,'Hector Manuel','Amado','Hectoramado@gmail.com',123456,3175555555,3,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_role`,`create_time`,`update_time`,`delete_time`)
+VALUES(2,'Promotor 1','promotor 1','diamondsogamoso@gmail.com',123456,3175555555,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user`(`id`,`names`,`surnames`,`email`,`password`,`phone`,`id_role`,`create_time`,`update_time`,`delete_time`)
+VALUES(3,'Promotor 2','promotor 2','diamantesogamoso@gmail.com',123456,3175555555,1,'2022-12-18 09:52:06',null,null);
+
+/*INSERTA USUARIO_LOCAL*/
+INSERT INTO `dmds`.`user_local`(`id`,`id_local`,`id_user`,`create_time`,`update_time`,`delete_time`)
+VALUES(1,1,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user_local`(`id`,`id_local`,`id_user`,`create_time`,`update_time`,`delete_time`)
+VALUES(2,1,2,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user_local`(`id`,`id_local`,`id_user`,`create_time`,`update_time`,`delete_time`)
+VALUES(3,2,3,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`user_local`(`id`,`id_local`,`id_user`,`create_time`,`update_time`,`delete_time`)
+VALUES(4,2,1,'2022-12-18 09:52:06',null,null);
+
 
 /*INSERTA REPAIR_STATE*/
 INSERT INTO `dmds`.`repair_state`(`id`,`name`,`create_time`,`update_time`,`delete_time`)

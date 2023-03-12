@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Role';
+    let alias = 'Departament';
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName:'role',
+        tableName:'departament',
         timestamps: true,
         paranoid:   true,
         createdAt: 'create_time',
@@ -27,12 +27,12 @@ module.exports = (sequelize, dataTypes) => {
 
      Role.associate = function (models) {
 
-
+/*
         Role.hasMany(models.User, {
             as: "user",
             foreignKey: "id_role"
         })
-
+*/
     }
  
     return Role

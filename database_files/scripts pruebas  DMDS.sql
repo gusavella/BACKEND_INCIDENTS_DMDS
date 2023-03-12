@@ -5,13 +5,14 @@ SELECT * FROM `dmds`.`machine`;
 SELECT * FROM `dmds`.`local_machine`;
 SELECT * FROM `dmds`.`role`;
 SELECT * FROM `dmds`.`user`;
+SELECT * FROM `dmds`.`user_local`;
 SELECT * FROM `dmds`.`repair`;
 SELECT * FROM `dmds`.`user_repair`;
 SELECT * FROM `dmds`.`repair_category`;
 SELECT * FROM `dmds`.`spare_part`;
 SELECT * FROM `dmds`.`repair_spare_part`;
 
-SELECT r.id,rs.name,m.serial,ur.observation,u.names,l.name FROM `dmds`.`repair` r,
+SELECT r.id,rs.name,m.serial,ur.observation,u.names,rl.name,l.name,c.name FROM `dmds`.`repair` r,
 `dmds`.`repair_spare_part` rsp,
 `dmds`.`spare_part` sp,
 `dmds`.`user_repair` ur,
@@ -19,7 +20,9 @@ SELECT r.id,rs.name,m.serial,ur.observation,u.names,l.name FROM `dmds`.`repair` 
 `dmds`.`machine` m,
 `dmds`.`local_machine` lm,
 `dmds`.`local` l,
-`dmds`.`repair_state` rs
+`dmds`.`repair_state` rs,
+`dmds`.`role` rl,
+`dmds`.`city`c
 where r.id=rsp.id_repair
 and rsp.id_spare_part=sp.id
 and ur.id_repair=r.id
@@ -28,4 +31,6 @@ and m.id=r.id_machine
 and l.id=lm.id_local
 and m.id=lm.id_machine
 and rs.id=r.id_repair_state
+and rl.id=u.id_role
+and c.id=l.id_city
 ;

@@ -24,25 +24,18 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(200),
             allowNull: false
         },
-        address: {
-            type: dataTypes.STRING(200),
-            allowNull: false
-        },
         phone: {
             type: dataTypes.STRING(200),
             allowNull: false
-        },
-        image: {
-            type: dataTypes.STRING(200),
-            allowNull: false
-        },
-        role_id:  {
+        },  
+        id_role:  {
             type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
         },
 
     };
     let config = {
+        tableName:'user',
         timestamps: true,
         paranoid:   true,
         createdAt: 'create_time',
@@ -55,13 +48,13 @@ module.exports = (sequelize, dataTypes) => {
        
         User.belongsTo(models.Role, {
             as: "role",
-            foreignKey: "role_id"
+            foreignKey: "id_role"
         })
 
-        User.hasMany(models.Order, {
+      /*  User.hasMany(models.Order, {
             as: "order",
             foreignKey: "user_id"
-        })
+        })*/
     }
  
     return User
