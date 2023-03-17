@@ -5,6 +5,7 @@ let cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 let logger = require('morgan');
 const expressSession = require("express-session");
+let cors = require("cors")
 
 let indexRouter = require('./src/routes/index');
 //let productRouter = require('./src/routes/productRouter');
@@ -33,11 +34,15 @@ let userRepairRouter = require('./src/routes/userRepairRouter');
 const apiUsersRouter = require('./src/routes/apiUsersRouter');
 const apiProductsRouter = require('./src/routes/apiProductsRouter');
 
-
+let corsOptions={
+  origin:'http://localhost:3000',
+  optionSuccesStatus:200
+}
 
 //let userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
 
 let app = express();
+app.use(cors(corsOptions))
 
 // view engine setup
 app.set('views', path.join(__dirname, '/src/views'));
