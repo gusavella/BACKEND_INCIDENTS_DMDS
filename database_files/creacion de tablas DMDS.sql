@@ -15,9 +15,9 @@ CREATE SCHEMA IF NOT EXISTS `DMDS` DEFAULT CHARACTER SET utf8 ;
 USE `DMDS` ;
 
 -- -----------------------------------------------------
--- Table `DMDS`.`Departament`
+-- Table `DMDS`.`Department`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DMDS`.`Departament` (
+CREATE TABLE IF NOT EXISTS `DMDS`.`Department` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
   `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -33,20 +33,57 @@ CREATE TABLE IF NOT EXISTS `DMDS`.`Departament` (
 CREATE TABLE IF NOT EXISTS `DMDS`.`City` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
-  `id_departament` INT NOT NULL,
+  `id_department` INT NOT NULL,
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` TIMESTAMP NULL,
   `delete_time` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
-  INDEX `id_departament_idx` (`id_departament` ASC) ,
-  CONSTRAINT `id_departament`
-    FOREIGN KEY (`id_departament`)
-    REFERENCES `DMDS`.`Departament` (`id`)
+  INDEX `id_departament_idx` (`id_department` ASC) ,
+  CONSTRAINT `id_department`
+    FOREIGN KEY (`id_department`)
+    REFERENCES `DMDS`.`Department` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-
+-- -----------------------------------------------------
+-- Table `DMDS`.`Company`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DMDS`.`Company` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` TIMESTAMP NULL,
+  `delete_time` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) );
+  
+  -- -----------------------------------------------------
+-- Table `DMDS`.`Local`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DMDS`.`Local` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `id_city` INT NOT NULL,
+  `id_company` INT NOT NULL,
+  `create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` TIMESTAMP NULL,
+  `delete_time` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) ,
+  INDEX `id_local_idx` (`id_city` ASC) ,
+  INDEX `id_company_idx` (`id_company` ASC) ,
+  CONSTRAINT `id_local`
+    FOREIGN KEY (`id_city`)
+    REFERENCES `DMDS`.`City` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_company`
+    FOREIGN KEY (`id_company`)
+    REFERENCES `DMDS`.`Company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+ /*   
 -- -----------------------------------------------------
 -- Table `DMDS`.`Local`
 -- -----------------------------------------------------
@@ -65,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `DMDS`.`Local` (
     REFERENCES `DMDS`.`City` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
+*/
 
 -- -----------------------------------------------------
 -- Table `DMDS`.`Role`

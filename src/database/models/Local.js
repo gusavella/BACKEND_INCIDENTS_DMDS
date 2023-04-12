@@ -14,6 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         id_city: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
+        },
+        id_company: {
+            type: dataTypes.BIGINT(10).UNSIGNED,
+            allowNull: false
         }
     };
     let config = {
@@ -39,10 +43,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_user"
         })
 
-        // Local.hasMany(models.LocalMachine, {
-        //     as: "local_machine",
-        //     foreignKey: "id_local"
-        // })
+        Local.belongsTo(models.Company, {
+            as: "company",
+            foreignKey: "id_company"
+        })
     }
     
     return Local

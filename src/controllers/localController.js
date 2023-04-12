@@ -4,8 +4,27 @@ const { validationResult } = require('express-validator')
 const controller = {
     all: async (req, res) => {
         try{
-            let locals=await db.Local.findAll()//{include:["city_local"]}
-            res.json( locals)
+            let locals=await db.Local.findAll({include:["city","company"]})
+            let result ={}
+            if (locals){
+                result ={
+                    info:{
+                        status:200,
+                        length:locals.length
+                    },
+                    data:locals
+                }
+            }
+            else{  
+                result ={
+                info:{
+                    status:204,
+                    length:0
+                },
+                data:"no data"
+            }
+        }
+            res.json( result)
         }catch(e){
             console.log(e)
         }
@@ -13,8 +32,27 @@ const controller = {
     detail: async (req, res) => {
          
         try{
-          let role= await db.Role.findByPk(req.params.id)
-          res.json(role);
+          let local= await db.Local.findByPk(req.params.id,{include:["city","company"]})
+          let result ={}
+          if (local){
+            result ={
+                info:{
+                    status:200,
+                    length:local.length
+                },
+                data:local
+            }
+        }
+        else{  
+            result ={
+            info:{
+                status:204,
+                length:0
+            },
+            data:"no data"
+        }
+    }
+        res.json( result)
         }
         catch(e){
           console.log(e)

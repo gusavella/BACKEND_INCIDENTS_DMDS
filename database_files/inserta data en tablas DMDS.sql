@@ -1,59 +1,67 @@
 /*INSERTA DEPARTAMENTOS*/
-INSERT INTO `dmds`.`departament`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`department`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
 VALUES(1,'Boyaca','2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`departament`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`department`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
 VALUES(2,'Casanare','2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`departament`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`department`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
 VALUES(3,'Santander','2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`departament`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`department`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
 VALUES(4,'Cundinamarca','2022-12-18 09:52:06',null,null);
 
 /*INSERTA CUIDADES*/
 
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(1,'Sogamoso',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(2,'Duitama',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(3,'Tunja',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(4,'Chiquinquira',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(5,'Yopal',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(6,'Aguazul',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(7,'Villanueva',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(8,'San gil',3,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(9,'Socorro',3,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(10,'Madrid',4,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(11,'Girardot',4,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(12,'Zipaquira',4,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`city`(`id`,`name`,`id_departament`,`create_time`,`update_time`,`delete_time`)
+INSERT INTO `dmds`.`city`(`id`,`name`,`id_department`,`create_time`,`update_time`,`delete_time`)
 VALUES(13,'Paipa',1,'2022-12-18 09:52:06',null,null);
 
+/*INSERTA EMPRESAS*/
+INSERT INTO `dmds`.`company`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+VALUES(1,'Inversiones DMDS','2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`company`(`id`,`name`,`create_time`,`update_time`,`delete_time`)
+VALUES(2,'Diversiones UNVSL','2022-12-18 09:52:06',null,null);
+
+
+
 /*INSERTA LOCALES*/
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino diamonds sogamoso',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino diamante',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino palace sogamoso',1,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino diamonds',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino liberadores',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Bodega',2,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino colonial',3,'2022-12-18 09:52:06',null,null);
-INSERT INTO `dmds`.`local`(`name`,`id_city`,`create_time`,`update_time`,`delete_time`)
-VALUES('Casino palace tunja',3,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino diamonds sogamoso',1,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino diamante',1,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino palace sogamoso',1,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino diamonds',2,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino liberadores',2,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Bodega',2,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino colonial',3,1,'2022-12-18 09:52:06',null,null);
+INSERT INTO `dmds`.`local`(`name`,`id_city`,`id_company`,`create_time`,`update_time`,`delete_time`)
+VALUES('Casino palace tunja',3,1,'2022-12-18 09:52:06',null,null);
 
 /*INSERTA MARK*/
 INSERT INTO `dmds`.`mark`(`id`,`name`,`create_time`,`update_time`,`delete_time`)

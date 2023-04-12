@@ -59,22 +59,22 @@ app.use(expressSession({secret: "secret",resave: false,saveUninitialized: false}
 
 app.use('/', indexRouter);
 
-app.use('/users', userRouter);
-app.use('/roles', roleRouter);
-app.use('/departments', departmentRouter);
-app.use('/cities', cityRouter);
-app.use('/locals', LocalRouter);
-app.use('/userlocals', userLocalsRouter);
-app.use('/marks', markRouter);
-app.use('/models', modelRouter);
-app.use('/machines', machineRouter);
-app.use('/repairCategories', repairCategoryRouter);
-app.use('/repairStates', repairStateRouter);
-app.use('/repairs', repairRouter);
-app.use('/userrepairs', userRepairRouter);
+app.use('/user', userRouter);
+app.use('/role', roleRouter);
+app.use('/department', departmentRouter);
+app.use('/city', cityRouter);
+app.use('/local', LocalRouter);
+app.use('/userlocal', userLocalsRouter);
+app.use('/mark', markRouter);
+app.use('/model', modelRouter);
+app.use('/machine', machineRouter);
+app.use('/repairCategorie', repairCategoryRouter);
+app.use('/repairState', repairStateRouter);
+app.use('/repair', repairRouter);
+app.use('/userrepair', userRepairRouter);
 
-app.use('/spareparts', sparePartRouter);
-app.use('/repairspareparts', repairSparePartRouter);
+app.use('/sparepart', sparePartRouter);
+app.use('/repairsparepart', repairSparePartRouter);
 // api
 
 app.use('/api/users', apiUsersRouter)
