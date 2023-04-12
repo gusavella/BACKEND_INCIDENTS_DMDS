@@ -59,7 +59,7 @@ const controller = {
         }
   },
     create:async(req,res)=>{
-        resultValidation = validationResult(req)
+        let resultValidation = validationResult(req)
         let roles=await db.Role.findAll()
         if (resultValidation.errors.length > 0){
             return res.render('role/role.ejs', {tittle : 'Roles', roles,

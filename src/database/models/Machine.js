@@ -41,9 +41,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_model"
         })
         
-        // Machine.hasMany(models.LocalMachine, {
-        //     as: "local_machine",
-        //     foreignKey: "id_machine"
+        // Machine.hasMany(models.Repair, {
+        //     as: "repair",
+        //     foreignKey: "id"
         // })
 
     }

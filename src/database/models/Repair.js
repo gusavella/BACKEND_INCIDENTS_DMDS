@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
       
         
         Repair.hasMany(models.UserRepair, {
-            as: "user_Repair",
+            as: "user_repair",
             foreignKey: "id_repair"
         })
 
@@ -54,6 +54,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "id_repair"
         })
 
+        Repair.belongsTo(models.Machine, {
+            as: "machine",
+            foreignKey: "id_machine"
+        })
     }
  
     return Repair

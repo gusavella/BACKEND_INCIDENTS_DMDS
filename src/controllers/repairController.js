@@ -9,7 +9,7 @@ const sequelize = db.sequelize;
 const controller = {
     all: async (req, res) => {
       try{
-        let repairs= await db.Repair.findAll({include:["repair_category","repair_state"]}) 
+        let repairs= await db.Repair.findAll({include:["repair_category","repair_state","user_repair","machine"]}) 
         res.json(repairs);
       }
       catch(e){
@@ -20,7 +20,7 @@ const controller = {
     detail: async (req, res) => {
          
           try{
-            let repair= await db.Repair.findByPk(req.params.id,{include:["repair_category","repair_state"]})
+            let repair= await db.Repair.findByPk(req.params.id,{include:["repair_category","repair_state","user_repair","machine"]})
             res.json(repair);
           }
           catch(e){
